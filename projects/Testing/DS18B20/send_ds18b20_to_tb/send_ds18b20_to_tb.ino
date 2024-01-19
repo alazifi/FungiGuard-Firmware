@@ -9,7 +9,7 @@
 #define SSID "IEG-1"
 #define PASS "evergreen999"
 
-#define TB_SERVER "iot.camry.um.ac.id"
+#define TB_SERVER "iot.abc-server.id"
 #define TB_PORT 1883
 #define TB_TOKEN "413bb7MI6GHC68L2BEEe"
 
@@ -17,8 +17,8 @@
 
 OneWire oneWire(DS18B20_PIN);
 DallasTemperature sensors(&oneWire);
-DeviceAddress probe1 = { 0x28, 0xA1, 0x6, 0x80, 0xE3, 0xE1, 0x3D, 0xE1 };
-DeviceAddress probe2 = { 0x28, 0x61, 0xCA, 0x80, 0xE3, 0xE1, 0x3D, 0x7D };
+DeviceAddress probe1 = {0x28, 0xA1, 0x6, 0x80, 0xE3, 0xE1, 0x3D, 0xE1};
+DeviceAddress probe2 = {0x28, 0x61, 0xCA, 0x80, 0xE3, 0xE1, 0x3D, 0x7D};
 LiquidCrystal_I2C lcd(0x27, 20, 4);
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -32,7 +32,8 @@ unsigned long previousMillis3 = 0;
 
 int status = WL_IDLE_STATUS;
 
-void setup() {
+void setup()
+{
   Serial.begin(115200);
 
   sensors.begin();
@@ -43,14 +44,15 @@ void setup() {
   connectMQTT();
 }
 
-void sendData() {
+void sendData()
+{
   sensors.requestTemperatures();
   String topicTelemetry = "v1/devices/me/telemetry";
   String topicAttribute = "v1/devices/me/attributes";
 
   DynamicJsonDocument doc(512);
-  doc["compose_temp1"] = "23";
-  doc["compose_temp2"] = "24";
+  doc["compose_temp1"] = sensors.getTempC(probe1);
+  doc["compose_temp2"] = sensors.getTempC(probe2);
 
   String payload;
   serializeJson(doc, payload);
@@ -59,10 +61,12 @@ void sendData() {
   // delay(1000);
 }
 
-void loop() {
+void loop()
+{
   unsigned long now = millis();
 
-  if (now - previousMillis3 >= interval3) {
+  if (now - previousMillis3 >= interval3)
+  {
     sendData();
     previousMillis3 = now;
   }
@@ -70,12 +74,15 @@ void loop() {
   client.loop();
 }
 
-void connectWiFi() {
+void connectWiFi()
+{
   // Loop until we're connected
-  while (WiFi.status() != WL_CONNECTED) {
+  while (WiFi.status() != WL_CONNECTED)
+  {
     Serial.print("Connecting to WiFi");
     WiFi.begin(SSID, PASS);
-    while (WiFi.status() != WL_CONNECTED) {
+    while (WiFi.status() != WL_CONNECTED)
+    {
       delay(500);
       Serial.print(".");
     }
@@ -83,18 +90,24 @@ void connectWiFi() {
   }
 }
 
-void connectMQTT() {
+void connectMQTT()
+{
   client.setServer(TB_SERVER, TB_PORT);
   // Loop until we're reconnected
-  while (!client.connected()) {
+  while (!client.connected())
+  {
     status = WiFi.status();
-    if (status != WL_CONNECTED) {
-      connectWiFi();  // Reconnect to WiFi if not connected
+    if (status != WL_CONNECTED)
+    {
+      connectWiFi(); // Reconnect to WiFi if not connected
     }
     Serial.print("Connecting to ThingsBoard node ...");
-    if (client.connect(TB_SERVER, TB_TOKEN, NULL)) {
+    if (client.connect(TB_SERVER, TB_TOKEN, NULL))
+    {
       Serial.println("[DONE]");
-    } else {
+    }
+    else
+    {
       Serial.print("[FAILED]");
       Serial.println(" : retrying in 5 seconds]");
       // Wait 5 seconds before retrying

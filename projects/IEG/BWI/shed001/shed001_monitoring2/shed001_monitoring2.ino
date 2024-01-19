@@ -31,9 +31,9 @@
 
 OneWire oneWire(DS18B20_PIN);
 DallasTemperature sensors(&oneWire);
-DeviceAddress probe4 = { 0x28, 0xA5, 0xC9, 0x80, 0xE3, 0xE1, 0x3D, 0x70 };
-DeviceAddress probe5 = { 0x28, 0xDD, 0xA,  0x80, 0xE3, 0xE1, 0x3D, 0x25 };
-DeviceAddress probe6 = { 0x28, 0x85, 0xCA, 0x80, 0xE3, 0xE1, 0x3D, 0x88 };
+DeviceAddress probe4 = {0x28, 0xA5, 0xC9, 0x80, 0xE3, 0xE1, 0x3D, 0x70};
+DeviceAddress probe5 = {0x28, 0xDD, 0xA, 0x80, 0xE3, 0xE1, 0x3D, 0x25};
+DeviceAddress probe6 = {0x28, 0x85, 0xCA, 0x80, 0xE3, 0xE1, 0x3D, 0x88};
 DHT dht(DHT_PIN, DHT_TYPE);
 LiquidCrystal_I2C lcd(0x27, 20, 4);
 MHZ19 myMHZ19;
@@ -43,7 +43,8 @@ PubSubClient client(espClient);
 TaskHandle_t process;
 TaskHandle_t transmission;
 
-void setup() {
+void setup()
+{
   Serial.begin(115200);
   Serial2.begin(BAUDRATE, SERIAL_8N1, RX_PIN, TX_PIN);
   myMHZ19.begin(Serial2);
@@ -67,17 +68,23 @@ void setup() {
   delay(500);
 }
 
-void connectWiFi() {
+void connectWiFi()
+{
   WiFi.begin(SSID, PASS);
 }
 
-void connectMQTT() {
+void connectMQTT()
+{
   client.setServer(TB_SERVER, TB_PORT);
 
-  while (!client.connected()) {
-    if (client.connect("bwi-001-monitoring-unit-02", TB_TOKEN, NULL)) {
+  while (!client.connected())
+  {
+    if (client.connect("bwi-001-monitoring-unit-02", TB_TOKEN, NULL))
+    {
       Serial.println("Connected to MQTT");
-    } else {
+    }
+    else
+    {
       Serial.print("Failed, rc=");
       Serial.print(client.state());
       Serial.println(" Retrying in 3 seconds...");
@@ -86,19 +93,23 @@ void connectMQTT() {
   }
 }
 
-float roomTemperature() {
+float roomTemperature()
+{
   return dht.readTemperature();
 }
 
-float humidity() {
+float humidity()
+{
   return dht.readHumidity();
 }
 
-int carbonDioxide() {
+int carbonDioxide()
+{
   return myMHZ19.getCO2();
 }
 
-void printLCD() {
+void printLCD()
+{
   sensors.requestTemperatures();
   lcd.clear();
 
@@ -146,7 +157,8 @@ void printLCD() {
   delay(DISPLAYING_DELAY);
 }
 
-void sendData() {
+void sendData()
+{
   sensors.requestTemperatures();
   String topicTelemetry = "v1/devices/me/telemetry";
   String topicAttribute = "v1/devices/me/attributes";
@@ -162,20 +174,25 @@ void sendData() {
   String payload;
   serializeJson(doc, payload);
   client.publish(topicTelemetry.c_str(), payload.c_str());
-//  client.publish(topicAttribute.c_str(), payload.c_str());
+  //  client.publish(topicAttribute.c_str(), payload.c_str());
   delay(1000);
 }
 
-void dataProcessing(void* parameters) {
+void dataProcessing(void *parameters)
+{
 
-  for (;;) {
+  for (;;)
+  {
     printLCD();
   }
 }
 
-void dataTransmission(void* parameters) {
-  for (;;) {
-    if (!client.connected()) {
+void dataTransmission(void *parameters)
+{
+  for (;;)
+  {
+    if (!client.connected())
+    {
       connectMQTT();
     }
     client.loop();
@@ -184,6 +201,7 @@ void dataTransmission(void* parameters) {
   }
 }
 
-void loop() {
+void loop()
+{
   ArduinoOTA.handle();
 }

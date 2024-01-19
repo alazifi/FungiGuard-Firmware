@@ -6,19 +6,21 @@ LiquidCrystal_I2C lcd2(0x26, 20, 4);
 
 unsigned long getDataTimer = 0;
 
-void setup() {
-
+void setup()
+{
   lcd.init();
   lcd.backlight();
   lcd.clear();
 
-    lcd2.init();
+  lcd2.init();
   lcd2.backlight();
   lcd2.clear();
 }
 
-void loop() {
-  if (millis() - getDataTimer >= 2000) {
+void loop()
+{
+  if (millis() - getDataTimer >= 2000)
+  {
 
     lcd.clear();
 
@@ -26,7 +28,7 @@ void loop() {
     lcd.print("CO2: 56");
     lcd.print("ppm");
 
-        lcd2.clear();
+    lcd2.clear();
 
     lcd2.setCursor(0, 0);
     lcd2.print("CO2: 34");

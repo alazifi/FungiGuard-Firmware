@@ -1,5 +1,3 @@
-// Koding untuk mengendalikan dua lampu LED pada ESP32 agar berkedip menggunakan millis dengan interval berbeda
-
 // Library yang diperlukan
 #include <Arduino.h>
 #include <WiFi.h>
@@ -23,19 +21,22 @@ const long interval2 = 500;  // Interval lampu 2
 int ledState1 = LOW;
 int ledState2 = LOW;
 
-void setup() {
+void setup()
+{
   // Mengatur pin sebagai output
   pinMode(ledPin1, OUTPUT);
   pinMode(ledPin2, OUTPUT);
   WiFi.begin(SSID, PASS);
 }
 
-void loop() {
+void loop()
+{
   // Mendapatkan waktu sekarang
   unsigned long currentMillis = millis();
 
   // Memeriksa apakah sudah waktunya untuk mengubah status lampu 1
-  if (currentMillis - previousMillis1 >= interval1) {
+  if (currentMillis - previousMillis1 >= interval1)
+  {
     // Menyimpan waktu terakhir lampu 1 diubah
 
     // Mengubah status lampu 1
@@ -47,7 +48,8 @@ void loop() {
   }
 
   // Memeriksa apakah sudah waktunya untuk mengubah status lampu 2
-  if (currentMillis - previousMillis2 >= interval2) {
+  if (currentMillis - previousMillis2 >= interval2)
+  {
     // Menyimpan waktu terakhir lampu 2 diubah
 
     // Mengubah status lampu 2
