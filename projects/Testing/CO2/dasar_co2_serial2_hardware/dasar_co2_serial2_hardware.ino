@@ -1,12 +1,12 @@
 #include <Arduino.h>
 #include "MHZ19.h"                                          // Remove if using HardwareSerial
 
+
 #define RX_PIN 16
 #define TX_PIN 17
 #define BAUDRATE 9600
 
-MHZ19 myMHZ19;                 // (Uno example) create device to MH-Z19 serial
-
+MHZ19 myMHZ19;
 unsigned long getDataTimer = 0;
 
 void setup()
