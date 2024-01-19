@@ -8,8 +8,6 @@ void setup() {
     Serial.begin(115200);
     Serial.println("Enabling IRin");
     IrReceiver.enableIRIn();
-    // IrReceiver.blink13(true);
-
     Serial.print(F("Ready to receive IR signals at pin "));
     Serial.println(IR_RECEIVE_PIN);
 }
