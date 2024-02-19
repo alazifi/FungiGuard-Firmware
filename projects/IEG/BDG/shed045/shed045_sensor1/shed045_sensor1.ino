@@ -18,7 +18,7 @@
 #define SSID "Shed45"
 #define PASS "test12345"
 
-#define TB_SERVER "iot.abc-server.id"
+#define TB_SERVER "iotn.abc-server.id"
 #define TB_TOKEN "XjsnxxhgwkOcCKIX7yPl"
 #define SHED_ID "bdg045"
 
@@ -58,7 +58,7 @@ unsigned long prevMillisSendTB = 0;
 unsigned long prevMillisUpdateAC = 0;
 
 unsigned long delayWifi = 300000;     // cek wifi setiap 5 menit
-unsigned long delaySendSerial = 1000; // send serial setiap 10 detik
+unsigned long delaySendSerial = 1000; // send serial setiap 1 detik
 unsigned long delaySendTB = 600000;   // kirim ke TB setiap 10 menit
 unsigned long delayUpdateAC = 60000;  // update AC setiap 1 menit
 

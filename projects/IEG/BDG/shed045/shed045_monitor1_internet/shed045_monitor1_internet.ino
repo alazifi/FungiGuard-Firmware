@@ -16,7 +16,7 @@
 #define SSID "Shed45"
 #define PASS "test12345"
 
-#define TB_SERVER "iot.abc-server.id"
+#define TB_SERVER "iotn.abc-server.id"
 #define TB_TOKEN "XjsnxxhgwkOcCKIX7yPl"
 #define SHED_ID "bdg045"
 
@@ -78,7 +78,7 @@ void setup()
   lcd2.init();
   lcd2.backlight();
   lcd2.clear();
-  ArduinoOTA.setHostname("bdg-001-monitor-unit-01");
+  ArduinoOTA.setHostname("bdg-045-monitor-unit-01");
   ArduinoOTA.setPassword("admin");
   ArduinoOTA.begin();
 }

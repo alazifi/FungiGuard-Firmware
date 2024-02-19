@@ -6,13 +6,14 @@
 #include <ArduinoOTA.h>
 #include <HTTPClient.h>
 #include <AccelStepper.h>
+#include <EEPROM.h>
 
 #define SSID "Shed45"
 #define PASS "test12345"
 
-#define TB_SERVER "iot.abc-server.id"
+#define TB_SERVER "iotn.abc-server.id"
 #define TB_TOKEN "XjsnxxhgwkOcCKIX7yPl"
-#define SHED_ID "bdg001"
+#define SHED_ID "bdg045"
 
 #define DIR 32
 #define STEP 33
@@ -30,22 +31,24 @@ unsigned long delayWifi = 10000;      // cek wifi setiap 10 detik
 unsigned long delaySendSerial = 1000; // send serial setiap 1 detik
 unsigned long delayAction = 2000;     // kirim ke TB setiap 10 menit
 
-int currentPosition = 0;
-int prevPosition = 0;
+
 
 void setup()
 {
   Serial.begin(250000);
+  EEPROM.begin(512);
   pinMode(STEP, OUTPUT);
   pinMode(DIR, OUTPUT);
   digitalWrite(STEP, LOW);
   digitalWrite(DIR, LOW);
-  stepper.setMaxSpeed(250.0);
-  stepper.setAcceleration(500.0);
   connectToWiFi();
-  ArduinoOTA.setHostname("bdg-001-aktuator-unit-01");
+  ArduinoOTA.setHostname("bdg-045-aktuator-unit-01");
   ArduinoOTA.setPassword("admin");
   ArduinoOTA.begin();
+  stepper.setMaxSpeed(1500.0);
+  stepper.setAcceleration(3000.0);
+  // Serial.println(percentCommand());
+  stepper.setCurrentPosition(readValue());
 }
 
 void connectToWiFi()
@@ -92,14 +95,29 @@ String commandFromTB()
   return result;
 }
 
+void saveToMemory(int position){
+  EEPROM.put(10, position);
+  EEPROM.commit();
+}
+
+int readValue(){
+  int value;
+  EEPROM.get(10, value);
+  return value;
+}
+
 int percentCommand()
 {
-  return commandFromTB().substring(0, commandFromTB().length() - 1).toInt() * 300;
+  int position = commandFromTB().substring(0, commandFromTB().length() - 1).toInt() * 300;
+  if(position != 0){
+    saveToMemory(position);
+    return position;
+  }
 }
 
 void stepMotor(int position)
 {
-  stepper.setSpeed(-50);
+  stepper.setSpeed(200);
   stepper.moveTo(position);
   stepper.runToPosition();
 }
@@ -121,7 +139,17 @@ void loop()
 
   if (currentMillis - prevMillisAction >= delayAction)
   {
-    movement();
+    percentCommand();
+    // movement();
+  stepper.setSpeed(200);
+  stepper.moveTo(readValue());
+  stepper.runToPosition();
+  // Serial.println(readValue());
+  // percentCommand();
+  // Serial.println("Persen " + String(percentCommand()));
+  // stepper.setCurrentPosition(percentCommand());
+  // movement();
+  
     prevMillisAction = currentMillis;
   }
 

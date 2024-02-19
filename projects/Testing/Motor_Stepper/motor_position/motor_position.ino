@@ -11,12 +11,13 @@ void setup() {
   // Set kecepatan maksimum dan percepatan stepper
   stepper.setMaxSpeed(250.0);
   stepper.setAcceleration(500.0);
+  stepper.setCurrentPosition(0);
 }
 
 void loop() {
   // Putar stepper searah jarum jam
-  stepper.setSpeed(50); // Set kecepatan putaran (dalam langkah per detik)
-  stepper.moveTo(1000);   // Pergi ke posisi langkah 500
+  stepper.setSpeed(100); // Set kecepatan putaran (dalam langkah per detik)
+  stepper.moveTo(0);   // Pergi ke posisi langkah 500
   stepper.runToPosition(); // Jalankan stepper sampai mencapai posisi yang ditentukan
 
   delay(1000);
@@ -24,9 +25,9 @@ void loop() {
 // digitalWrite(32, LOW);
 // digitalWrite(33, LOW);
   // // Putar stepper berlawanan arah jarum jam
-  stepper.setSpeed(100); // Set kecepatan putaran (dalam langkah per detik)
-  stepper.moveTo(0);     // Pergi ke posisi langkah 0
-  stepper.runToPosition(); // Jalankan stepper sampai mencapai posisi yang ditentukan
+  // stepper.setSpeed(100); // Set kecepatan putaran (dalam langkah per detik)
+  // stepper.moveTo(0);     // Pergi ke posisi langkah 0
+  // stepper.runToPosition(); // Jalankan stepper sampai mencapai posisi yang ditentukan
 
   delay(1000); // Tunda 1 detik
 }
