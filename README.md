@@ -3,12 +3,12 @@ FungiGuard is an alias for this product. It has ability to monitor and control o
 
 ## A shed consists of these devices:
 
-- 2 Sensor Units
-- 2 Actuator Units 
-- 1 Automation Unit
-- 1 Monitor Unit
+- [Sensor Units x 2](#sensor_unit) <a name="sensor_unit"></a>
+- Actuator Units x 2
+- Automation Unit x 1
+- Monitor Unit x 1
 
-### Each sensor units
+### Each sensor units <a name="sensor_unit"></a>
 
 -- consists of:
 - 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
