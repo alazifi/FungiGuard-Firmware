@@ -9,9 +9,7 @@ FungiGuard is an alias for this product. It has ability to monitor and control o
 - [Automation Unit](#automation_unit) x 1
 - [Monitor Unit](#monitor_unit) x 1
 
- <a name="sensor_unit"></a>
-
-### Each sensor units
+### Each sensor units  <a name="sensor_unit"></a>
 
 -- consists of:
 - 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
