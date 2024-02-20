@@ -29,7 +29,7 @@ unsigned long prevMillisUpdateAC = 0;
 
 unsigned long delayWifi = 10000;      // cek wifi setiap 10 detik
 unsigned long delaySendSerial = 1000; // send serial setiap 1 detik
-unsigned long delayAction = 2000;     // kirim ke TB setiap 10 menit
+unsigned long delayAction = 2000;     // kirim ke TB setiap 2 menit
 
 
 
@@ -144,11 +144,6 @@ void loop()
   stepper.setSpeed(200);
   stepper.moveTo(readValue());
   stepper.runToPosition();
-  // Serial.println(readValue());
-  // percentCommand();
-  // Serial.println("Persen " + String(percentCommand()));
-  // stepper.setCurrentPosition(percentCommand());
-  // movement();
   
     prevMillisAction = currentMillis;
   }

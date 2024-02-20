@@ -1,5 +1,5 @@
 # FungiGuard
-FungiGuard is an alias for this product. It has ability to monitor and control of mushroom farming room to produce good quality and fresh mushroom. Can be remoted manually every where and every time with Thingsboard platform. :smiley:
+FungiGuard is an alias for this product. It has ability to monitor and control of mushroom farming room to produce good quality and fresh mushroom. Can be remoted manually every where and every time with Thingsboard platform. :mushroom:
 
 ## A shed consists of these devices:
 
@@ -35,13 +35,11 @@ tasks:
 - read Air Conditioner setting from Thingsboard
 - send Air Conditioner setting via IR protocol in pronto hex format
 
-### Each monitor unit
+### Each actuator units
 
 consists of:
 - 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
-- 2 MAX485 for reading data from sensor unit
-- 2 LCD I2C for displaying data
-- 2 RJ45 port for transmission interface
+- 1 Motor Stepper Nema 
 
 wiring diagrams to ESP32:
 
@@ -55,7 +53,7 @@ tasks:
 - read incoming data from sensor unit
 - display data via LCD I2C
 
-### Each control unit
+### Each automation unit
 
 consists of:
 - 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
@@ -75,3 +73,23 @@ wiring diagrams to ESP32:
 tasks:
 - read state data from Thingsboard
 - trigger relay based on state data
+
+### Each monitor unit
+
+consists of:
+- 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
+- 2 MAX485 for reading data from sensor unit
+- 2 LCD I2C for displaying data
+- 2 RJ45 port for transmission interface
+
+wiring diagrams to ESP32:
+
+| LCD I2C <=> ESP32 | RS485 <=> ESP32 |
+|     SDA <=> 21    |    RO <=> 16    |
+|     SCL <=> 22    |    DI <=> 17    |
+|     VCC <=> Vin   |   VCC <=> Vin   |
+|     GND <=> GND   |   GND <=> GND   |
+
+tasks:
+- read incoming data from sensor unit
+- display data via LCD I2C
