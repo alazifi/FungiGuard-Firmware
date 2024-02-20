@@ -21,18 +21,15 @@ FungiGuard is an alias for this product. It has ability to monitor and control o
 
 wiring diagrams to ESP32:
 
+
+<div align="center">
+
 | DHT22 <=> ESP32 | DS18B20 <=> ESP32 | MH>Z19B <=> ESP32 | RS485 <=> ESP32 | IR1 <=> ESP32 | IR2 <=> ESP32 |
+|-----------------|:-----------------:|:-----------------:|:---------------:|:-------------:|:-------------:|
 |  DATA <=> 26    |    DATA <=> 25    |      RX <=> 33    |    RO <=> 16    |               |               |
 |                 |                   |      TX <=> 32    |    DI <=> 17    |               |               |
 |   VCC <=> Vin   |     VCC <=> Vin   |     VCC <=> Vin   |   VCC <=> Vin   | VCC <=> 18    | VCC <=> 27    |
 |   GND <=> GND   |     GND <=> GND   |     GND <=> GND   |   GND <=> GND   | GND <=> GND   | GND <=> GND   |
-
-<div align="center">
-
-| Service       |          Command Stack           |               Query Stack              | 
-|---------------|:--------------------------------:|:--------------------------------------:|
-| Account       |       [![Account - Command Stack]](https://opensource.org/licenses/MIT)|          [![Account - Query Stack]](https://opensource.org/licenses/MIT)|
-| Communication | [![Communication - Command Stack]](https://opensource.org/licenses/MIT)| [![Communication - Query Stack]](https://opensource.org/licenses/MIT)|
 
  :construction: <sub>Work in Progress (WIP)</sub>
 
