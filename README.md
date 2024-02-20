@@ -42,19 +42,7 @@ tasks:
 - read Air Conditioner setting from Thingsboard
 - send Air Conditioner setting via IR protocol in pronto hex format
 
-<a name="actuator_unit"></a>
-
-
-
-
-
-
-
-
-
-
-
-### Each actuator units
+### Each actuator units <a name="actuator_unit"></a>
 
 consists of:
 - 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
@@ -79,9 +67,7 @@ tasks:
 - read incoming data from sensor unit
 - display data via LCD I2C
 
-<a name="automation_unit"></a>
-
-### Each automation unit
+### Each automation unit <a name="automation_unit"></a>
 
 consists of:
 - 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
@@ -107,9 +93,7 @@ tasks:
 - read state data from Thingsboard
 - trigger relay based on state data
 
-<a name="monitor_unit"></a>
-
-### Each monitor unit 
+### Each monitor unit <a name="monitor_unit"></a>
 
 consists of:
 - 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
@@ -133,39 +117,3 @@ wiring diagrams to ESP32:
 tasks:
 - read incoming data from sensor unit
 - display data via LCD I2C
-
-
-# Nama Proyek Anda
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub Stars](https://img.shields.io/github/stars/username/repo.svg)](https://github.com/username/repo/stargazers)
-
-Deskripsi singkat tentang proyek Anda.
-
-## Daftar Isi
-
-- [Demo](#demo)
-- [Fitur](#fitur)
-- [Instalasi](#instalasi)
-- [Penggunaan](#penggunaan)
-- [Kontribusi](#kontribusi)
-- [Lisensi](#lisensi)
-
-## Demo
-
-Tampilkan demo atau tautan ke situs web proyek Anda.
-
-## Fitur
-
-- Fitur 1
-- Fitur 2
-- Fitur 3
-
-## Instalasi
-
-Cara menginstal proyek Anda:
-
-```bash
-git clone https://github.com/username/repo.git
-cd repo
-npm install
