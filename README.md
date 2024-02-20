@@ -24,7 +24,7 @@ wiring diagrams to ESP32:
 
 <div align="center">
 
-| DHT22 &harr; ESP32 | DS18B20 &harr; ESP32 | MH-Z19B &harr; ESP32 | RS485 &harr; ESP32 | IR1 &harr; ESP32 | IR2 &harr; ESP32 |
+| DHT22 &harr; ESP | DS18B20 &harr; ESP | MH-Z19B &harr; ESP | RS485 &harr; ESP | IR1 &harr; ESP | IR2 &harr; ESP |
 |-----------------|:-----------------:|:-----------------:|:---------------:|:-------------:|:-------------:|
 |  DATA &harr; 26    |    DATA &harr; 25    |      RX &harr; 33    |    RO &harr; 16    |               |               |
 |                 |                   |      TX &harr; 32    |    DI &harr; 17    |               |               |
