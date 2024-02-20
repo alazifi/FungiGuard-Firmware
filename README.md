@@ -57,12 +57,14 @@ consists of:
 wiring diagrams to ESP32:
 
 <div align="center">
+
 | LCD I2C &harr; ESP32 | RS485 &harr; ESP32 |
 |:--------------------:|:------------------:|
 |     SDA &harr; 21    |    RO &harr; 16    |
 |     SCL &harr; 22    |    DI &harr; 17    |
 |     VCC &harr; Vin   |   VCC &harr; Vin   |
 |     GND &harr; GND   |   GND &harr; GND   |
+
 </div>
 
 tasks:
@@ -81,6 +83,7 @@ consists of:
 wiring diagrams to ESP32:
 
 <div align="center">
+
 |  RELAY &harr; ESP32  |
 |:--------------------:|
 | IN CH1 &harr; 32     | -- MISTING PIN
@@ -89,6 +92,7 @@ wiring diagrams to ESP32:
 | IN CH4 &harr; 26     | -- BLOWER2 PIN
 |    VCC &harr; Vin    |
 |    GND &harr; GND    |
+
 </div>
 
 tasks:
@@ -108,12 +112,14 @@ consists of:
 wiring diagrams to ESP32:
 
 <div align="center">
+
 | LCD I2C &harr; ESP32 | RS485 &harr; ESP32 |
 |:--------------------:|:------------------:|
 |     SDA &harr; 21    |    RO &harr; 16    |
 |     SCL &harr; 22    |    DI &harr; 17    |
 |     VCC &harr; Vin   |   VCC &harr; Vin   |
 |     GND &harr; GND   |   GND &harr; GND   |
+
 </div>
 
 tasks:
