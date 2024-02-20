@@ -84,14 +84,14 @@ wiring diagrams to ESP32:
 
 <div align="center">
 
-|  RELAY &harr; ESP32  |
-|:--------------------:|
-| IN CH1 &harr; 32     | &rarr; MISTING PIN
-| IN CH2 &harr; 33     | &rarr; EXHAUST PIN
-| IN CH3 &harr; 25     | &rarr; BLOWER1 PIN
-| IN CH4 &harr; 26     | &rarr; BLOWER2 PIN
-|    VCC &harr; Vin    |
-|    GND &harr; GND    |
+|  RELAY &harr; ESP32  |         USAGE        |
+|:--------------------:|:--------------------:|
+| IN CH1 &harr; 32     | &rarr; MISTING PIN   |
+| IN CH2 &harr; 33     | &rarr; EXHAUST PIN   |
+| IN CH3 &harr; 25     | &rarr; BLOWER1 PIN   |
+| IN CH4 &harr; 26     | &rarr; BLOWER2 PIN   |
+|    VCC &harr; Vin    |                      |
+|    GND &harr; GND    |                      |
 
 </div>
 
