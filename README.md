@@ -24,14 +24,12 @@ wiring diagrams to ESP32:
 
 <div align="center">
 
-| DHT22 <=> ESP32 | DS18B20 <=> ESP32 | MH>Z19B <=> ESP32 | RS485 <=> ESP32 | IR1 <=> ESP32 | IR2 <=> ESP32 |
+| DHT22 &harr; ESP32 | DS18B20 &harr; ESP32 | MH-Z19B &harr; ESP32 | RS485 &harr; ESP32 | IR1 &harr; ESP32 | IR2 &harr; ESP32 |
 |-----------------|:-----------------:|:-----------------:|:---------------:|:-------------:|:-------------:|
-|  DATA <=> 26    |    DATA <=> 25    |      RX <=> 33    |    RO <=> 16    |               |               |
-|                 |                   |      TX <=> 32    |    DI <=> 17    |               |               |
-|   VCC <=> Vin   |     VCC <=> Vin   |     VCC <=> Vin   |   VCC <=> Vin   | VCC <=> 18    | VCC <=> 27    |
-|   GND <=> GND   |     GND <=> GND   |     GND <=> GND   |   GND <=> GND   | GND <=> GND   | GND <=> GND   |
-
- :construction: <sub>Work in Progress (WIP)</sub>
+|  DATA &harr; 26    |    DATA &harr; 25    |      RX &harr; 33    |    RO &harr; 16    |               |               |
+|                 |                   |      TX &harr; 32    |    DI &harr; 17    |               |               |
+|   VCC &harr; Vin   |     VCC &harr; Vin   |     VCC &harr; Vin   |   VCC &harr; Vin   | VCC &harr; 18    | VCC &harr; 27    |
+|   GND &harr; GND   |     GND &harr; GND   |     GND &harr; GND   |   GND &harr; GND   | GND &harr; GND   | GND &harr; GND   |
 
 </div>
 
@@ -49,15 +47,15 @@ consists of:
 - 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
 - 1 Motor Stepper Nema 17HS4401 
 - 1 Driver A4988
-- 
+- 1 Step Down LM2596
 
 wiring diagrams to ESP32:
 
-| LCD I2C <=> ESP32 | RS485 <=> ESP32 |
-|     SDA <=> 21    |    RO <=> 16    |
-|     SCL <=> 22    |    DI <=> 17    |
-|     VCC <=> Vin   |   VCC <=> Vin   |
-|     GND <=> GND   |   GND <=> GND   |
+| LCD I2C &harr; ESP32 | RS485 &harr; ESP32 |
+|     SDA &harr; 21    |    RO &harr; 16    |
+|     SCL &harr; 22    |    DI &harr; 17    |
+|     VCC &harr; Vin   |   VCC &harr; Vin   |
+|     GND &harr; GND   |   GND &harr; GND   |
 
 tasks:
 - read incoming data from sensor unit
@@ -72,13 +70,13 @@ consists of:
 
 wiring diagrams to ESP32:
 
-|  RELAY <=> ESP32  |
-| IN CH1 <=> 32     | -- MISTING PIN
-| IN CH2 <=> 33     | -- EXHAUST PIN
-| IN CH3 <=> 25     | -- BLOWER1 PIN
-| IN CH4 <=> 26     | -- BLOWER2 PIN
-|    VCC <=> Vin    |
-|    GND <=> GND    |
+|  RELAY &harr; ESP32  |
+| IN CH1 &harr; 32     | -- MISTING PIN
+| IN CH2 &harr; 33     | -- EXHAUST PIN
+| IN CH3 &harr; 25     | -- BLOWER1 PIN
+| IN CH4 &harr; 26     | -- BLOWER2 PIN
+|    VCC &harr; Vin    |
+|    GND &harr; GND    |
 
 tasks:
 - read state data from Thingsboard
@@ -94,11 +92,11 @@ consists of:
 
 wiring diagrams to ESP32:
 
-| LCD I2C <=> ESP32 | RS485 <=> ESP32 |
-|     SDA <=> 21    |    RO <=> 16    |
-|     SCL <=> 22    |    DI <=> 17    |
-|     VCC <=> Vin   |   VCC <=> Vin   |
-|     GND <=> GND   |   GND <=> GND   |
+| LCD I2C &harr; ESP32 | RS485 &harr; ESP32 |
+|     SDA &harr; 21    |    RO &harr; 16    |
+|     SCL &harr; 22    |    DI &harr; 17    |
+|     VCC &harr; Vin   |   VCC &harr; Vin   |
+|     GND &harr; GND   |   GND &harr; GND   |
 
 tasks:
 - read incoming data from sensor unit
