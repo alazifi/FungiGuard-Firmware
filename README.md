@@ -3,10 +3,10 @@ FungiGuard is an alias for this product. It has ability to monitor and control o
 
 ## A shed consists of these devices:
 
-- [Sensor Units x 2](#sensor_unit) <a name="sensor_unit"></a>
-- Actuator Units x 2
-- Automation Unit x 1
-- Monitor Unit x 1
+- [Sensor Unit] x 2 (#sensor_unit) <a name="sensor_unit"></a>
+- [Actuator Unit] x 2 (#actuator_unit) <a name="actuator_unit"></a>
+- [Automation Unit] x 1 (#automation_unit) <a name="automation_unit"></a>
+- [Monitor Unit] x 1 (#monitor_unit) <a name="monitor_unit"></a>
 
 ### Each sensor units <a name="sensor_unit"></a>
 
@@ -41,7 +41,7 @@ tasks:
 - read Air Conditioner setting from Thingsboard
 - send Air Conditioner setting via IR protocol in pronto hex format
 
-### Each actuator units
+### Each actuator units <a name="actuator_unit"></a>
 
 consists of:
 - 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
@@ -61,7 +61,7 @@ tasks:
 - read incoming data from sensor unit
 - display data via LCD I2C
 
-### Each automation unit
+### Each automation unit <a name="automation_unit"></a>
 
 consists of:
 - 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
@@ -82,7 +82,7 @@ tasks:
 - read state data from Thingsboard
 - trigger relay based on state data
 
-### Each monitor unit
+### Each monitor unit <a name="monior_unit"></a>
 
 consists of:
 - 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
