@@ -1,8 +1,10 @@
 # FungiGuard :mushroom:
 
-FungiGuard is an alias for this product. It has ability to monitor and control of mushroom farming room to produce good quality and fresh mushroom. Can be remoted manually every where and every time with Thingsboard platform. :mushroom:
+FungiGuard is an alias for this product. It has ability to monitor and control of mushroom farming (shed) to produce good quality and fresh mushroom. Can be remoted manually every where and every time with Thingsboard platform. :mushroom:
 
-## A shed consists of these devices:
+## Overview 
+
+A shed consists of these devices:
 
 - [Sensor Unit](#sensor_unit) x 2
 - [Actuator Unit](#actuator_unit) x 2
@@ -10,9 +12,9 @@ FungiGuard is an alias for this product. It has ability to monitor and control o
 - [Monitor Unit](#monitor_unit) x 1
 
 <a name="sensor_unit"></a>
-### Each sensor units  
+### Sensor unit  
 
--- consists of:
+#### Contains of:
 - 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
 - 1 DHT22 for humidity measurement
 - 1 MH-Z19B for CO2 measurement
@@ -21,8 +23,7 @@ FungiGuard is an alias for this product. It has ability to monitor and control o
 - 2 IR Emitter for sending Air Conditioner setting 
 - 1 RJ45 port for transmission interface
 
-wiring diagrams to ESP32:
-
+#### Wiring diagrams to ESP32:
 
 <div align="center">
 
@@ -35,7 +36,7 @@ wiring diagrams to ESP32:
 
 </div>
 
-tasks:
+#### Tasks:
 - read sensor data
 - send sensor data to Thingsboard via http protocol
 - send sensor data to Monitor Unit via MAX485
@@ -44,15 +45,15 @@ tasks:
 - send Air Conditioner setting via IR protocol in pronto hex format
 
 <a name="actuator_unit"></a>
-### Each actuator units 
+### Actuator unit
 
-consists of:
+#### Contains of:
 - 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
 - 1 Motor Stepper Nema 17HS4401 
 - 1 Driver A4988
 - 1 Step Down LM2596
 
-wiring diagrams to ESP32:
+#### Wiring diagrams to ESP32:
 
 <div align="center">
 
@@ -65,19 +66,19 @@ wiring diagrams to ESP32:
 
 </div>
 
-tasks:
+#### Tasks:
 - read incoming data from sensor unit
 - display data via LCD I2C
 
 <a name="automation_unit"></a>
-### Each automation unit 
+### Automation unit 
 
-consists of:
+#### Contains of:
 - 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
 - 2 Terminal block (6 pin)
 - 4 channel SSR relay: 1 for misting, 1 for exhaust, 2 for blower
 
-wiring diagrams to ESP32:
+#### Wiring diagrams to ESP32:
 
 <div align="center">
 
@@ -92,20 +93,20 @@ wiring diagrams to ESP32:
 
 </div>
 
-tasks:
+#### Tasks:
 - read state data from Thingsboard
 - trigger relay based on state data
 
 <a name="monitor_unit"></a>
-### Each monitor unit 
+### Monitor unit 
 
-consists of:
+#### Contains of:
 - 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
 - 2 MAX485 for reading data from sensor unit
 - 2 LCD I2C for displaying data
 - 2 RJ45 port for transmission interface
 
-wiring diagrams to ESP32:
+#### Wiring diagrams to ESP32:
 
 <div align="center">
 
@@ -118,6 +119,6 @@ wiring diagrams to ESP32:
 
 </div>
 
-tasks:
+#### Tasks:
 - read incoming data from sensor unit
 - display data via LCD I2C
