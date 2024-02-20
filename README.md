@@ -86,10 +86,10 @@ wiring diagrams to ESP32:
 
 |  RELAY &harr; ESP32  |
 |:--------------------:|
-| IN CH1 &harr; 32     | -- MISTING PIN
-| IN CH2 &harr; 33     | -- EXHAUST PIN
-| IN CH3 &harr; 25     | -- BLOWER1 PIN
-| IN CH4 &harr; 26     | -- BLOWER2 PIN
+| IN CH1 &harr; 32     | &rarr; MISTING PIN
+| IN CH2 &harr; 33     | &rarr; EXHAUST PIN
+| IN CH3 &harr; 25     | &rarr; BLOWER1 PIN
+| IN CH4 &harr; 26     | &rarr; BLOWER2 PIN
 |    VCC &harr; Vin    |
 |    GND &harr; GND    |
 
