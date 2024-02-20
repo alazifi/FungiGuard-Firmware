@@ -1,5 +1,4 @@
 # FungiGuard :mushroom:
-=======================
 
 FungiGuard is an alias for this product. It has ability to monitor and control of mushroom farming room to produce good quality and fresh mushroom. Can be remoted manually every where and every time with Thingsboard platform. :mushroom:
 
