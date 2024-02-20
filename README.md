@@ -28,11 +28,11 @@ wiring diagrams to ESP32:
 <div align="center">
 
 | DHT22 &harr; ESP | DS18B20 &harr; ESP | MH-Z19B &harr; ESP | RS485 &harr; ESP | IR1 &harr; ESP | IR2 &harr; ESP |
-|:-----------------:|:-----------------:|:-----------------:|:---------------:|:-------------:|:-------------:|
-|  DATA &harr; 26    |    DATA &harr; 25    |      RX &harr; 33    |    RO &harr; 16    |               |               |
-|                 |                   |      TX &harr; 32    |    DI &harr; 17    |               |               |
-|   VCC &harr; Vin   |     VCC &harr; Vin   |     VCC &harr; Vin   |   VCC &harr; Vin   | VCC &harr; 18    | VCC &harr; 27    |
-|   GND &harr; GND   |     GND &harr; GND   |     GND &harr; GND   |   GND &harr; GND   | GND &harr; GND   | GND &harr; GND   |
+|:----------------:|:------------------:|:------------------:|:----------------:|:--------------:|:--------------:|
+|  DATA &harr; 26  |   DATA &harr; 25   |     RX &harr; 33   |   RO &harr; 16   |                |                |
+|                  |                    |     TX &harr; 32   |   DI &harr; 17   |                |                |
+|  VCC &harr; Vin  |    VCC &harr; Vin  |    VCC &harr; Vin  |  VCC &harr; Vin  | VCC &harr; 18  | VCC &harr; 27  |
+|  GND &harr; GND  |    GND &harr; GND  |    GND &harr; GND  |  GND &harr; GND  | GND &harr; GND | GND &harr; GND |
 
 </div>
 
@@ -58,7 +58,7 @@ wiring diagrams to ESP32:
 
 <div align="center">
 | LCD I2C &harr; ESP32 | RS485 &harr; ESP32 |
-|:-----------------:|:-----------------:|
+|:--------------------:|:------------------:|
 |     SDA &harr; 21    |    RO &harr; 16    |
 |     SCL &harr; 22    |    DI &harr; 17    |
 |     VCC &harr; Vin   |   VCC &harr; Vin   |
@@ -82,7 +82,7 @@ wiring diagrams to ESP32:
 
 <div align="center">
 |  RELAY &harr; ESP32  |
-|:-----------------:|
+|:--------------------:|
 | IN CH1 &harr; 32     | -- MISTING PIN
 | IN CH2 &harr; 33     | -- EXHAUST PIN
 | IN CH3 &harr; 25     | -- BLOWER1 PIN
@@ -109,7 +109,7 @@ wiring diagrams to ESP32:
 
 <div align="center">
 | LCD I2C &harr; ESP32 | RS485 &harr; ESP32 |
-|:-----------------:|:-----------------:|
+|:--------------------:|:------------------:|
 |     SDA &harr; 21    |    RO &harr; 16    |
 |     SCL &harr; 22    |    DI &harr; 17    |
 |     VCC &harr; Vin   |   VCC &harr; Vin   |
