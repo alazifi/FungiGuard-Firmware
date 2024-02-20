@@ -1,6 +1,6 @@
 # FungiGuard :mushroom:
 
-FungiGuard is an alias for this product. It has ability to monitor and control of mushroom farming (shed) to produce good quality and fresh mushroom. Can be remoted manually every where and every time with Thingsboard platform. :mushroom:
+FungiGuard is an alias for this product. It has ability to monitor and control of mushroom farming (shed) to produce good quality and fresh mushroom. Can be remoted manually every where and every time with Thingsboard platform.
 
 ## Overview 
 
@@ -14,7 +14,7 @@ A shed consists of these devices:
 <a name="sensor_unit"></a>
 ### Sensor unit  
 
-####:package: Contains of:
+#### :package: Contains of:
 - 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
 - 1 DHT22 for humidity measurement
 - 1 MH-Z19B for CO2 measurement
@@ -47,7 +47,7 @@ A shed consists of these devices:
 <a name="actuator_unit"></a>
 ### Actuator unit
 
-####:package: Contains of:
+#### :package: Contains of:
 - 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
 - 1 Motor Stepper Nema 17HS4401 
 - 1 Driver A4988
@@ -73,7 +73,7 @@ A shed consists of these devices:
 <a name="automation_unit"></a>
 ### Automation unit 
 
-####:package: Contains of:
+#### :package: Contains of:
 - 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
 - 2 Terminal block (6 pin)
 - 4 channel SSR relay: 1 for misting, 1 for exhaust, 2 for blower
@@ -100,7 +100,7 @@ A shed consists of these devices:
 <a name="monitor_unit"></a>
 ### Monitor unit 
 
-####:package: Contains of:
+#### :package: Contains of:
 - 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
 - 2 MAX485 for reading data from sensor unit
 - 2 LCD I2C for displaying data
@@ -123,6 +123,8 @@ A shed consists of these devices:
 - read incoming data from sensor unit
 - display data via LCD I2C
 
+- - - -
+
 ## Installation
 1. Make sure `Git` is installed.
 2. Navigate to the folder where you want to install.
@@ -132,4 +134,12 @@ A shed consists of these devices:
 ```bash
 git clone https://github.com/alazifi/FungiGuard-Firmware.git
 ```
+
+- - - -
+
+## TO-DO-NEXT
+Some task must be executed after this version are:
+- [ ] Wired connection architecture for all devices with one device as gateway to WiFi network.
+- [ ] Implement manual operation interface for actuator and automation unit to ease maintenance and operation (plantation).
+- [ ] Enlosure component with more proper enclosure, such as durabox or metal panel box.
 
