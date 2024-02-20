@@ -31,8 +31,8 @@ wiring diagrams to ESP32:
 
 | Service       |          Command Stack           |               Query Stack              | 
 |---------------|:--------------------------------:|:--------------------------------------:|
-| Account       |       [![Account - Command Stack]]|          [![Account - Query Stack]]	|
-| Communication | [![Communication - Command Stack]]| [![Communication - Query Stack]]		|
+| Account       |       [![Account - Command Stack]](https://opensource.org/licenses/MIT)|          [![Account - Query Stack]](https://opensource.org/licenses/MIT)|
+| Communication | [![Communication - Command Stack]](https://opensource.org/licenses/MIT)| [![Communication - Query Stack]](https://opensource.org/licenses/MIT)|
 
  :construction: <sub>Work in Progress (WIP)</sub>
 
