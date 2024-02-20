@@ -1,5 +1,5 @@
-# FungiGuard is an alias for this products
-
+# FungiGuard
+FungiGuard is an alias for this product. It has ability to monitor and control of mushroom farming room to produce good quality and fresh mushroom. Can be remoted manually every where and every time with Thingsboard platform. :smiley:
 
 ## A shed consists of these devices:
 
@@ -45,11 +45,11 @@ consists of:
 
 wiring diagrams to ESP32:
 
-| LCD I2C <=- ESP32 | RS485 <=- ESP32 |
-|     SDA <=- 21    |    RO <=- 16    |
-|     SCL <=- 22    |    DI <=- 17    |
-|     VCC <=- Vin   |   VCC <=- Vin   |
-|     GND <=- GND   |   GND <=- GND   |
+| LCD I2C <=> ESP32 | RS485 <=> ESP32 |
+|     SDA <=> 21    |    RO <=> 16    |
+|     SCL <=> 22    |    DI <=> 17    |
+|     VCC <=> Vin   |   VCC <=> Vin   |
+|     GND <=> GND   |   GND <=> GND   |
 
 tasks:
 - read incoming data from sensor unit
@@ -64,13 +64,13 @@ consists of:
 
 wiring diagrams to ESP32:
 
-|  RELAY <=- ESP32  |
-| IN CH1 <=- 32     | -- MISTING PIN
-| IN CH2 <=- 33     | -- EXHAUST PIN
-| IN CH3 <=- 25     | -- BLOWER1 PIN
-| IN CH4 <=- 26     | -- BLOWER2 PIN
-|    VCC <=- Vin    |
-|    GND <=- GND    |
+|  RELAY <=> ESP32  |
+| IN CH1 <=> 32     | -- MISTING PIN
+| IN CH2 <=> 33     | -- EXHAUST PIN
+| IN CH3 <=> 25     | -- BLOWER1 PIN
+| IN CH4 <=> 26     | -- BLOWER2 PIN
+|    VCC <=> Vin    |
+|    GND <=> GND    |
 
 tasks:
 - read state data from Thingsboard
