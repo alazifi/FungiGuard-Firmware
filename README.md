@@ -27,6 +27,23 @@ wiring diagrams to ESP32:
 |   VCC <=> Vin   |     VCC <=> Vin   |     VCC <=> Vin   |   VCC <=> Vin   | VCC <=> 18    | VCC <=> 27    |
 |   GND <=> GND   |     GND <=> GND   |     GND <=> GND   |   GND <=> GND   | GND <=> GND   | GND <=> GND   |
 
+<div align="center">
+
+| Service       |                                                                                                              Command Stack                                                                                                               |                                                                                                            Query Stack                                                                                                             | 
+|---------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| Account       |          [![Account - Command Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/account-command.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/account-command.yaml)          |          [![Account - Query Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/account-query.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/account-query.yaml)          |
+| Communication | [![Communication - Command Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/communication-command.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/communication-command.yaml) | [![Communication - Query Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/communication-query.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/communication-query.yaml) |
+| Identity      |        [![Identity - Command Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/identity-command.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/identity-command.yaml)         |        [![Identity - Query Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/identity-query.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/identity-query.yaml)         |
+| Order         |             [![Order - Command Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/order-command.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/order-command.yaml)             |             [![Order - Query Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/order-query.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/order-query.yaml)             |
+| Catalog       |          [![Catalog - Command Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/catalog-command.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/catalog-command.yaml)          |          [![Catalog - Query Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/catalog-query.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/catalog-query.yaml)          |
+| Warehouse     |       [![Warehouse - Command Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/warehouse-command.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/warehouse-command.yaml)       |       [![Warehouse - Query Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/warehouse-query.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/warehouse-query.yaml)       |
+| Shopping Cart | [![Shopping Cart - Command Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/shopping-cart-command.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/shopping-cart-command.yaml) | [![Shopping Cart - Query Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/shopping-cart-query.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/shopping-cart-query.yaml) |
+| Payment       |          [![Payment - Command Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/payment-command.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/payment-command.yaml)          |          [![Payment - Query Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/payment-query.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/payment-query.yaml)          |
+
+ :construction: <sub>Work in Progress (WIP)</sub>
+
+</div>
+
 tasks:
 - read sensor data
 - send sensor data to Thingsboard via http protocol
@@ -39,7 +56,9 @@ tasks:
 
 consists of:
 - 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
-- 1 Motor Stepper Nema 
+- 1 Motor Stepper Nema 17HS4401 
+- 1 Driver A4988
+- 
 
 wiring diagrams to ESP32:
 
