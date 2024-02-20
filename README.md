@@ -3,10 +3,10 @@ FungiGuard is an alias for this product. It has ability to monitor and control o
 
 ## A shed consists of these devices:
 
-- [Sensor Unit] x 2 (#sensor_unit) <a name="sensor_unit"></a>
-- [Actuator Unit] x 2 (#actuator_unit) <a name="actuator_unit"></a>
-- [Automation Unit] x 1 (#automation_unit) <a name="automation_unit"></a>
-- [Monitor Unit] x 1 (#monitor_unit) <a name="monitor_unit"></a>
+- [Sensor Unit](#sensor_unit) <a name="sensor_unit"></a> x 2
+- [Actuator Unit](#actuator_unit) <a name="actuator_unit"></a> x 2
+- [Automation Unit](#automation_unit) <a name="automation_unit"></a> x 1
+- [Monitor Unit](#monitor_unit) <a name="monitor_unit"></a> x 1
 
 ### Each sensor units <a name="sensor_unit"></a>
 
@@ -25,7 +25,7 @@ wiring diagrams to ESP32:
 <div align="center">
 
 | DHT22 &harr; ESP | DS18B20 &harr; ESP | MH-Z19B &harr; ESP | RS485 &harr; ESP | IR1 &harr; ESP | IR2 &harr; ESP |
-|-----------------|:-----------------:|:-----------------:|:---------------:|:-------------:|:-------------:|
+|:-----------------:|:-----------------:|:-----------------:|:---------------:|:-------------:|:-------------:|
 |  DATA &harr; 26    |    DATA &harr; 25    |      RX &harr; 33    |    RO &harr; 16    |               |               |
 |                 |                   |      TX &harr; 32    |    DI &harr; 17    |               |               |
 |   VCC &harr; Vin   |     VCC &harr; Vin   |     VCC &harr; Vin   |   VCC &harr; Vin   | VCC &harr; 18    | VCC &harr; 27    |
@@ -51,11 +51,14 @@ consists of:
 
 wiring diagrams to ESP32:
 
+<div align="center">
 | LCD I2C &harr; ESP32 | RS485 &harr; ESP32 |
+|:-----------------:|:-----------------:|
 |     SDA &harr; 21    |    RO &harr; 16    |
 |     SCL &harr; 22    |    DI &harr; 17    |
 |     VCC &harr; Vin   |   VCC &harr; Vin   |
 |     GND &harr; GND   |   GND &harr; GND   |
+</div>
 
 tasks:
 - read incoming data from sensor unit
@@ -70,13 +73,16 @@ consists of:
 
 wiring diagrams to ESP32:
 
+<div align="center">
 |  RELAY &harr; ESP32  |
+|:-----------------:|
 | IN CH1 &harr; 32     | -- MISTING PIN
 | IN CH2 &harr; 33     | -- EXHAUST PIN
 | IN CH3 &harr; 25     | -- BLOWER1 PIN
 | IN CH4 &harr; 26     | -- BLOWER2 PIN
 |    VCC &harr; Vin    |
 |    GND &harr; GND    |
+</div>
 
 tasks:
 - read state data from Thingsboard
@@ -92,11 +98,14 @@ consists of:
 
 wiring diagrams to ESP32:
 
+<div align="center">
 | LCD I2C &harr; ESP32 | RS485 &harr; ESP32 |
+|:-----------------:|:-----------------:|
 |     SDA &harr; 21    |    RO &harr; 16    |
 |     SCL &harr; 22    |    DI &harr; 17    |
 |     VCC &harr; Vin   |   VCC &harr; Vin   |
 |     GND &harr; GND   |   GND &harr; GND   |
+</div>
 
 tasks:
 - read incoming data from sensor unit
