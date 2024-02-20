@@ -10,7 +10,6 @@ FungiGuard is an alias for this product. It has ability to monitor and control o
 - [Monitor Unit](#monitor_unit) x 1
 
 <a name="sensor_unit"></a>
-</br>
 ### Each sensor units  
 
 -- consists of:
@@ -45,7 +44,6 @@ tasks:
 - send Air Conditioner setting via IR protocol in pronto hex format
 
 <a name="actuator_unit"></a>
-</br>
 ### Each actuator units 
 
 consists of:
@@ -72,7 +70,6 @@ tasks:
 - display data via LCD I2C
 
 <a name="automation_unit"></a>
-</br>
 ### Each automation unit 
 
 consists of:
@@ -100,7 +97,6 @@ tasks:
 - trigger relay based on state data
 
 <a name="monitor_unit"></a>
-</br>
 ### Each monitor unit 
 
 consists of:
