@@ -1,4 +1,5 @@
 # FungiGuard :mushroom:
+=======================
 FungiGuard is an alias for this product. It has ability to monitor and control of mushroom farming room to produce good quality and fresh mushroom. Can be remoted manually every where and every time with Thingsboard platform. :mushroom:
 
 ## A shed consists of these devices:
@@ -8,7 +9,9 @@ FungiGuard is an alias for this product. It has ability to monitor and control o
 - [Automation Unit](#automation_unit) x 1
 - [Monitor Unit](#monitor_unit) x 1
 
-### Each sensor units <a name="sensor_unit"></a>
+ <a name="sensor_unit"></a>
+
+### Each sensor units
 
 -- consists of:
 - 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
@@ -41,7 +44,9 @@ tasks:
 - read Air Conditioner setting from Thingsboard
 - send Air Conditioner setting via IR protocol in pronto hex format
 
-### Each actuator units <a name="actuator_unit"></a>
+<a name="actuator_unit"></a>
+
+### Each actuator units
 
 consists of:
 - 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
@@ -64,7 +69,9 @@ tasks:
 - read incoming data from sensor unit
 - display data via LCD I2C
 
-### Each automation unit <a name="automation_unit"></a>
+<a name="automation_unit"></a>
+
+### Each automation unit
 
 consists of:
 - 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
@@ -88,7 +95,9 @@ tasks:
 - read state data from Thingsboard
 - trigger relay based on state data
 
-### Each monitor unit <a name="monior_unit"></a>
+<a name="monitor_unit"></a>
+
+### Each monitor unit 
 
 consists of:
 - 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
