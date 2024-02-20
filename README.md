@@ -106,3 +106,39 @@ wiring diagrams to ESP32:
 tasks:
 - read incoming data from sensor unit
 - display data via LCD I2C
+
+
+# Nama Proyek Anda
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub Stars](https://img.shields.io/github/stars/username/repo.svg)](https://github.com/username/repo/stargazers)
+
+Deskripsi singkat tentang proyek Anda.
+
+## Daftar Isi
+
+- [Demo](#demo)
+- [Fitur](#fitur)
+- [Instalasi](#instalasi)
+- [Penggunaan](#penggunaan)
+- [Kontribusi](#kontribusi)
+- [Lisensi](#lisensi)
+
+## Demo
+
+Tampilkan demo atau tautan ke situs web proyek Anda.
+
+## Fitur
+
+- Fitur 1
+- Fitur 2
+- Fitur 3
+
+## Instalasi
+
+Cara menginstal proyek Anda:
+
+```bash
+git clone https://github.com/username/repo.git
+cd repo
+npm install
