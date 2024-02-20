@@ -44,7 +44,9 @@ tasks:
 - read Air Conditioner setting from Thingsboard
 - send Air Conditioner setting via IR protocol in pronto hex format
 
-### Each actuator units <a name="actuator_unit"></a>
+<a name="actuator_unit"></a>
+</br>
+### Each actuator units 
 
 consists of:
 - 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
@@ -69,7 +71,9 @@ tasks:
 - read incoming data from sensor unit
 - display data via LCD I2C
 
-### Each automation unit <a name="automation_unit"></a>
+<a name="automation_unit"></a>
+</br>
+### Each automation unit 
 
 consists of:
 - 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
@@ -95,7 +99,9 @@ tasks:
 - read state data from Thingsboard
 - trigger relay based on state data
 
-### Each monitor unit <a name="monitor_unit"></a>
+<a name="monitor_unit"></a>
+</br>
+### Each monitor unit 
 
 consists of:
 - 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
