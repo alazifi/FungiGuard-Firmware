@@ -122,3 +122,13 @@ A shed consists of these devices:
 #### Tasks:
 - read incoming data from sensor unit
 - display data via LCD I2C
+
+## Installation
+1. Make sure `Git` is installed.
+2. Navigate to the folder where you want to install.
+3. Right-click, open command prompt (Open in Terminal).
+4. Execute the following code:
+
+```bash
+git clone https://github.com/alazifi/FungiGuard-Firmware.git
+```
