@@ -3,10 +3,10 @@ FungiGuard is an alias for this product. It has ability to monitor and control o
 
 ## A shed consists of these devices:
 
-- [Sensor Unit](#sensor_unit) <a name="sensor_unit"></a> x 2
-- [Actuator Unit](#actuator_unit) <a name="actuator_unit"></a> x 2
-- [Automation Unit](#automation_unit) <a name="automation_unit"></a> x 1
-- [Monitor Unit](#monitor_unit) <a name="monitor_unit"></a> x 1
+- [Sensor Unit](#sensor_unit) x 2
+- [Actuator Unit](#actuator_unit) x 2
+- [Automation Unit](#automation_unit) x 1
+- [Monitor Unit](#monitor_unit) x 1
 
 ### Each sensor units <a name="sensor_unit"></a>
 
