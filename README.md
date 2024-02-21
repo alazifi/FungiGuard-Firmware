@@ -4,6 +4,10 @@ FungiGuard is an alias for this product. It has ability to monitor and control o
 
 ## Table of Contents
 - [Overview](#overview)
+    - [Sensor Unit](#sensor_unit)
+    - [Actuator Unit](#actuator_unit)   
+    - [Automation Unit](#automation_unit)
+    - [Monitor Unit](#monitor_unit)
 - [Installaton](#installation)
 - [Directory Structure](#directory_structure)
 - [To-Do-Next](#to_do_next)
