@@ -103,7 +103,7 @@ String getDataFromTB()
   if (httpResponseCode == HTTP_CODE_OK)
   {
     // get string from http response
-    String payload = http.getString();
+    payload = http.getString();
     // return payload;
   }
   else
@@ -111,7 +111,7 @@ String getDataFromTB()
     // code for debugging HTTP response code
     //  Serial.print("HTTP Error code: ");
     //  Serial.println(httpResponseCode);
-    return "HTTP Error code: " + String(httpResponseCode);
+    payload = "HTTP Error code: " + String(httpResponseCode);
   }
 
   // end http connection

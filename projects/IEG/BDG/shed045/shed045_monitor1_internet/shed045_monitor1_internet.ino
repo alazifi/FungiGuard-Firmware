@@ -314,49 +314,86 @@ String carbonDioxide2()
   return result;
 }
 
+//function to get data from thingsboard on sensor unit 1
 String getDataFromTB1()
 {
+  // make object for http
   HTTPClient http;
+
+  // API to get data from Thingsboard
   String url = "https://" + String(TB_SERVER) + "/api/v1/" + String(TB_TOKEN) + "/attributes?clientKeys=" + String(SHED_ID) + "_comTemp1," + String(SHED_ID) + "_comTemp2," + String(SHED_ID) + "_comTemp3," + String(SHED_ID) + "_comTemp4," + String(SHED_ID) + "_comTemp5," + String(SHED_ID) + "_roomTemp1," + String(SHED_ID) + "_humi1," + String(SHED_ID) + "_CO21," + String(SHED_ID) + "_fase";
+
+  // start write http
   http.begin(url);
+
+  // add header to http request
   http.addHeader("Content-Type", "application/json");
+
+  // mode http GET
   int httpResponseCode = http.GET();
+
+  // variable for payload
   String payload = "";
+
+  // check http response
   if (httpResponseCode == HTTP_CODE_OK)
   {
-    String payload = http.getString();
-    return payload;
+    // get string from http response
+    payload = http.getString();
+    //return payload;
   }
   else
   {
-    // Serial.print("HTTP Error code: ");
-    // Serial.println(httpResponseCode);
-    return "HTTP Error code: " + String(httpResponseCode);
-    // return url;
+    // code for debugging HTTP response code
+    //  Serial.print("HTTP Error code: ");
+    //  Serial.println(httpResponseCode);
+    payload = "HTTP Error code: " + String(httpResponseCode);
   }
+
+  // end http connection
   http.end();
+  return payload;
 }
 
+//function to get data from thingsboard on sensor unit 2
 String getDataFromTB2()
-{
+{ 
+  // make object for http
   HTTPClient http;
+
+  // API to get data from Thingsboard
   String url = "https://" + String(TB_SERVER) + "/api/v1/" + String(TB_TOKEN) + "/attributes?clientKeys=" + String(SHED_ID) + "_comTemp6," + String(SHED_ID) + "_comTemp7," + String(SHED_ID) + "_comTemp8," + String(SHED_ID) + "_comTemp9," + String(SHED_ID) + "_comTemp10," + String(SHED_ID) + "_roomTemp2," + String(SHED_ID) + "_humi2," + String(SHED_ID) + "_CO22";
+
+  // start write http
   http.begin(url);
+
+  // add header to http request
   http.addHeader("Content-Type", "application/json");
+
+  // mode http GET
   int httpResponseCode = http.GET();
+
+  // variable for payload
   String payload = "";
+
+  // check http response
   if (httpResponseCode == HTTP_CODE_OK)
   {
-    String payload = http.getString();
-    return payload;
+    // get string from http response
+    payload = http.getString();
+    //return payload;
   }
   else
   {
-    // Serial.print("HTTP Error code: ");
-    // Serial.println(httpResponseCode);
-    return "HTTP Error code: " + String(httpResponseCode);
+    // code for debugging HTTP response code
+    //  Serial.print("HTTP Error code: ");
+    //  Serial.println(httpResponseCode);
+    payload = "HTTP Error code: " + String(httpResponseCode);
   }
+
+  // end http connection
   http.end();
+  return payload;
 }
 
 void printLCD()
