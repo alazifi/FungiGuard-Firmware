@@ -22,10 +22,8 @@ A shed consists of these devices:
 - [Automation Unit](#automation_unit) x 1
 - [Monitor Unit](#monitor_unit) x 1
 
-<a name="sensor_unit">
-
+<a name="sensor_unit"></a>
 ## Sensor unit  
-</a>
 
 ### :package: Contains of:
 - 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
