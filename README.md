@@ -67,8 +67,8 @@ A shed consists of these devices:
 </div>
 
 #### :pencil2: Tasks:
-- read incoming data from sensor unit
-- display data via LCD I2C
+- read incoming data from Thingsboard
+- act as linear actuator to open circulation
 
 <a name="automation_unit"></a>
 ### Automation unit 
@@ -134,6 +134,49 @@ A shed consists of these devices:
 ```bash
 git clone https://github.com/alazifi/FungiGuard-Firmware.git
 ```
+
+- - - -
+
+## Directory Structure
+project/
+│
+├── libraries/                          # Main projects libraries
+│ ├── All Arduino Libraries/            # Required libraries and modules for projects
+│ └── DataRemote/                       # Library helper for AC code
+│ └── README.md                         # Informations for libraries
+│
+├── projects/                           # Main source codes
+│ ├── IEG/                              # Codes for project
+│ │ ├── BDG/                            # Codes for Pangalengan projects
+│ │ │ └── shed045/                      # Pangalengan shed 45
+│ │ │   ├── shed045_aktuator1/          # Codes for Actuator Unit 1
+│ │ │   ├── shed045_aktuator2/          # Codes for Actuator Unit 2
+│ │ │   ├── shed045_automation1/        # Codes for Automation
+│ │ │   ├── shed045_monitor1/           # Codes for Monitor Unit, data taken with RS485
+│ │ │   ├── shed045_monitor1_internet/  # Codes for Monitor Unit, data taken from Thingsboard
+│ │ │   ├── shed045_sensor1/            # Codes for Sensor Unit 1
+│ │ │   └── shed045_sensor2/            # Codes for Sensor Unit 2
+│ │ │
+│ │ └── BWI/                            # Codes for Banyuwangi projects
+│ │   └── shed001/                      # Banyuwangi shed 1
+│ │     ├── shed001_bell1/              # Codes for Alarm Bell Unit 1
+│ │     ├── shed001_bell2/              # Codes for Alarm Bell Unit 2
+│ │     ├── shed001_monitoring1/        # Codes for Monitor Unit 1
+│ │     └── shed001_monitoring2/        # Codes for Monitor Unit 2
+│ │
+│ └── Testing/                          # Codes for trial error
+│   ├── CO2/                            # Test for CO2
+│   ├── DS18B20/                        # Test for DS18B20 compose temperature
+│   ├── GPIO/                           # Test for GPIO control
+│   ├── LCD/                            # Test for LCD I2C 20x4
+│   ├── millis/                         # Test for millis feature
+│   ├── motor_stepper/                  # Test for motor stepper with A4988 driver
+│   ├── OTA/                            # Test for OTA
+│   ├── send_remote_IR/                 # Test for sending IR code to AC
+│   ├── send_to_thingsboard/            # Test for sending data to Thinsgboard
+│   └── serial_RS485/                   # Test for serial communication RS485
+│ 
+└── README.md # General project informations
 
 - - - -
 
