@@ -22,9 +22,10 @@ A shed consists of these devices:
 - [Automation Unit](#automation_unit) x 1
 - [Monitor Unit](#monitor_unit) x 1
 
-<a name="sensor_unit"></a>
+<a name="sensor_unit">
 
 ## Sensor unit  
+</a>
 
 ### :package: Contains of:
 - 1 ESP32 DEVKIT V1 (CHIP ESPWROOM32) as main processor
@@ -153,8 +154,9 @@ git clone https://github.com/alazifi/FungiGuard-Firmware.git
 
 - - - -
 
-<a name="directory_structure"></a>
+<a name="directory_structure">
 # Directory Structure
+</a>
 
 ```bash
 project/
@@ -168,7 +170,7 @@ project/
 │ ├── IEG/                              # Codes for project
 │ │ ├── BDG/                            # Codes for Pangalengan projects
 │ │ │ └── shed045/                      # Pangalengan shed 45
-│ │ │   ├── shed045_aktuator1/          # Codes for Actuator Unit 1
+│ │ │   ├── shed045_aktuator1/          # Codes for Actuator Unit 1 
 │ │ │   ├── shed045_aktuator2/          # Codes for Actuator Unit 2
 │ │ │   ├── shed045_automation1/        # Codes for Automation
 │ │ │   ├── shed045_monitor1/           # Codes for Monitor Unit, data taken with RS485
