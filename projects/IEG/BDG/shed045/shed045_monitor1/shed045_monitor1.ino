@@ -1,31 +1,36 @@
 #include <Arduino.h>
-#include <ArduinoJson.h>
-#include <LiquidCrystal_I2C.h>
-#include <SoftwareSerial.h>
+#include <ArduinoJson.h>       //library for parsing data json
+#include <LiquidCrystal_I2C.h> //library for LCD I2C
+#include <SoftwareSerial.h>    //library for software serial
 
-#define EN_PIN_1 18 // serial2
-#define EN_PIN_2 19 // softwareserial
-#define SHED_ID "bdg045"
+#define EN_PIN_1 18      // mode control pin for RS485 use serial2
+#define EN_PIN_2 19      // mode control pin for RS485 use softwareserial
+#define SHED_ID "bdg045" // id for shed
 
-#define RX_SEC 33
-#define TX_SEC 32
+#define RX_SEC 33 // pin for RS485 use softwareserial
+#define TX_SEC 32 // pin for RS485 use softwareserial
 
+// make object for software serial
 SoftwareSerial secSerial(RX_SEC, TX_SEC);
 
+// make object for LCD I2C
 LiquidCrystal_I2C lcd(0x26, 20, 4);
 LiquidCrystal_I2C lcd2(0x27, 20, 4);
 
+// make object for parsed document
 DynamicJsonDocument doc1(512);
 DynamicJsonDocument doc2(512);
 
+// initiate millis
 unsigned long prevMillisWifi = 0;
-unsigned long prevMillisSendSerial = 0;
-unsigned long prevMillisSendTB = 0;
+unsigned long prevMillisPrintLCD = 0;
+unsigned long prevMillisDebug = 0;
 
-unsigned long delayWifi = 1000;       // cek wifi setiap 5 menit
-unsigned long delaySendSerial = 1000; // send serial setiap 10 detik
-unsigned long delaySendTB = 1000;     // kirim ke TB setiap 10 menit
+unsigned long delayWifi = 1000;     // connection check every 10 s
+unsigned long delayPrintLCD = 1000; // print LCD every 1 s
+unsigned long delayDebug = 1000;    // print serial monitor every 1 s
 
+// variables definitions
 String lastComTemp1 = "";
 String lastComTemp2 = "";
 String lastComTemp3 = "";
@@ -46,25 +51,35 @@ String lastPhase = "";
 
 void setup()
 {
+  // serial communication RS485 on serial2
   Serial2.begin(115200);
+
+  // serial communication RS485 on softwareserial
   secSerial.begin(250000);
+
+  // serial communication for debugging
   Serial.begin(500000);
 
+  // set RS485 pin mode as output
   pinMode(EN_PIN_1, OUTPUT);
   pinMode(EN_PIN_2, OUTPUT);
 
+  // initiate work of RS485 pins as low condition (receiver)
   digitalWrite(EN_PIN_1, LOW);
   digitalWrite(EN_PIN_2, LOW);
 
+  // initiate LCD 1 work
   lcd.init();
   lcd.backlight();
   lcd.clear();
 
+  // initiate LCD 2 work
   lcd2.init();
   lcd2.backlight();
   lcd2.clear();
 }
 
+// function for get compose temperature 1
 String composeTemperature1()
 {
   String result = lastComTemp1;
@@ -76,6 +91,7 @@ String composeTemperature1()
   return result;
 }
 
+// function for get compose temperature 2
 String composeTemperature2()
 {
   String result = lastComTemp2;
@@ -87,6 +103,7 @@ String composeTemperature2()
   return result;
 }
 
+// function for get compose temperature 3
 String composeTemperature3()
 {
   String result = lastComTemp3;
@@ -98,6 +115,7 @@ String composeTemperature3()
   return result;
 }
 
+// function for get compose temperature 4
 String composeTemperature4()
 {
   String result = lastComTemp4;
@@ -109,6 +127,7 @@ String composeTemperature4()
   return result;
 }
 
+// function for get compose temperature 5
 String composeTemperature5()
 {
   String result = lastComTemp5;
@@ -120,6 +139,7 @@ String composeTemperature5()
   return result;
 }
 
+// function for get room temperature 1
 String roomTemperature1()
 {
   String result = lastRoomTemp1;
@@ -131,6 +151,7 @@ String roomTemperature1()
   return result;
 }
 
+// function for get humidity 1
 String humidity1()
 {
   String result = lastHumi1;
@@ -142,6 +163,7 @@ String humidity1()
   return result;
 }
 
+// function for get carbon dioxide 1
 String carbonDioxide1()
 {
   String result = lastCo21;
@@ -153,6 +175,7 @@ String carbonDioxide1()
   return result;
 }
 
+// function for get plantation phase
 String phase()
 {
   String result = lastPhase;
@@ -164,6 +187,7 @@ String phase()
   return result;
 }
 
+// function for formatting plantation phase
 String paddedPhase()
 {
   String result = "";
@@ -185,6 +209,7 @@ String paddedPhase()
   return result;
 }
 
+// function for get compose temperature 6
 String composeTemperature6()
 {
   String result = lastComTemp6;
@@ -196,6 +221,7 @@ String composeTemperature6()
   return result;
 }
 
+// function for get compose temperature 7
 String composeTemperature7()
 {
   String result = lastComTemp7;
@@ -207,6 +233,7 @@ String composeTemperature7()
   return result;
 }
 
+// function for get compose temperature 8
 String composeTemperature8()
 {
   String result = lastComTemp8;
@@ -218,6 +245,7 @@ String composeTemperature8()
   return result;
 }
 
+// function for get compose temperature 9
 String composeTemperature9()
 {
   String result = lastComTemp9;
@@ -229,6 +257,7 @@ String composeTemperature9()
   return result;
 }
 
+// function for get compose temperature 10
 String composeTemperature10()
 {
   String result = lastComTemp10;
@@ -240,6 +269,7 @@ String composeTemperature10()
   return result;
 }
 
+// function for get room temperature 2
 String roomTemperature2()
 {
   String result = lastRoomTemp2;
@@ -251,6 +281,7 @@ String roomTemperature2()
   return result;
 }
 
+// function for get humidity 2
 String humidity2()
 {
   String result = lastHumi2;
@@ -262,6 +293,7 @@ String humidity2()
   return result;
 }
 
+// function for get carbon dioxide 2
 String carbonDioxide2()
 {
   String result = lastCo22;
@@ -273,9 +305,10 @@ String carbonDioxide2()
   return result;
 }
 
+// function for display value to LCD
 void printLCD()
 {
-
+  // print to LCD 1
   lcd.setCursor(0, 0);
   lcd.print(paddedPhase());
 
@@ -296,7 +329,8 @@ void printLCD()
 
   lcd.setCursor(10, 3);
   lcd.print("C2:" + String(carbonDioxide2()) + "pm ");
-  //=====================
+
+  // print to LCD 2
   lcd2.setCursor(0, 0);
   lcd2.print("K1:" + String(composeTemperature1()) + "C ");
 
@@ -328,12 +362,14 @@ void loop()
   String receivedData2;
   String id = "";
 
+  // check data on serial2
   if (Serial2.available() > 0)
   {
     receivedData1 = Serial2.readString();
     DeserializationError error1 = deserializeJson(doc1, receivedData1);
   }
 
+  // check data on softwareserial
   if (secSerial.available() > 0)
   {
     receivedData2 = secSerial.readString();
@@ -342,12 +378,20 @@ void loop()
 
   unsigned long currentMillis = millis();
 
-  if (currentMillis - prevMillisSendTB >= delaySendTB)
+  if (currentMillis - prevMillisPrintLCD >= delayPrintLCD)
   {
+    printLCD();
+    prevMillisPrintLCD = currentMillis;
+  }
+
+  if (currentMillis - prevMillisDebug >= delayDebug)
+  {
+    // print as parsed value
     Serial.println("01. " + String(composeTemperature1()) + "\t02." + String(composeTemperature2()) + "\t03." + String(composeTemperature3()) + "\t04." + String(composeTemperature4()) + "\t05." + String(composeTemperature5()) + "\t06." + String(roomTemperature1()) + "\t07." + String(humidity1()) + "\t08." + String(carbonDioxide1()) + "\t9. " + String(composeTemperature6()) + "\t10." + String(composeTemperature7()) + "\t11." + String(composeTemperature8()) + "\t12." + String(composeTemperature9()) + "\t13." + String(composeTemperature10()) + "\t14." + String(roomTemperature2()) + "\t15." + String(humidity2()) + "\t16." + String(carbonDioxide2()));
-    // printLCD();
-    // Serial.println(receivedData1);
-    // Serial.println(receivedData2);
-    prevMillisSendTB = currentMillis;
+
+    // print as json package
+    //  Serial.println(receivedData1);
+    //  Serial.println(receivedData2);
+    prevMillisDebug = currentMillis;
   }
 }
