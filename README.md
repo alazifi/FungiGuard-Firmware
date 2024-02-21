@@ -138,6 +138,8 @@ git clone https://github.com/alazifi/FungiGuard-Firmware.git
 - - - -
 
 ## Directory Structure
+
+```bash
 project/
 │
 ├── libraries/                          # Main projects libraries
@@ -177,7 +179,7 @@ project/
 │   └── serial_RS485/                   # Test for serial communication RS485
 │ 
 └── README.md # General project informations
-
+```
 - - - -
 
 ## TO-DO-NEXT
