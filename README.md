@@ -152,9 +152,8 @@ git clone https://github.com/alazifi/FungiGuard-Firmware.git
 
 - - - -
 
-<a name="directory_structure">
+<a name="directory_structure"></a>
 # Directory Structure
-</a>
 
 ```bash
 project/
