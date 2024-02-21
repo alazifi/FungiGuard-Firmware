@@ -163,20 +163,51 @@ project/
 │ │   └── shed001/                      # Banyuwangi shed 1
 │ │     ├── shed001_bell1/              # Codes for Alarm Bell Unit 1
 │ │     ├── shed001_bell2/              # Codes for Alarm Bell Unit 2
-│ │     ├── shed001_monitoring1/        # Codes for Monitor Unit 1
-│ │     └── shed001_monitoring2/        # Codes for Monitor Unit 2
+│ │     ├── shed001_monitor1/           # Codes for Monitor Unit 1
+│ │     └── shed001_monitor2/           # Codes for Monitor Unit 2
 │ │
 │ └── Testing/                          # Codes for trial error
 │   ├── CO2/                            # Test for CO2
+│   │ ├── basic_co2_serial_hardware/    # CO2 reading in Serial2 for ESP32
+│   │ ├── basic_co2_softwareserial/     # CO2 reading in Software Serial
+│   │ ├── co2_and_lcd/                  # Displaying CO2 value via LCD 
+│   │ └── simple_co2/                   # Check reading of CO2 using serial monitor
+│   │
 │   ├── DS18B20/                        # Test for DS18B20 compose temperature
+│   │ ├── check_ds18b20_address/        # Obtaining addresses of DS18B20 on certain pin
+│   │ └── send_ds18b20_to_tb/           # Send DS18B20 data to Thingsboard via MQTT protocol
+│   │
 │   ├── GPIO/                           # Test for GPIO control
+│   │ └── testing_tombol/               # Test INPUT pin functionality using push button
+│   │
 │   ├── LCD/                            # Test for LCD I2C 20x4
-│   ├── millis/                         # Test for millis feature
+│   │ └── basic_multiple_lcd/           # Display data to 2 LCD using different I2C addresses
+│   │
+│   ├── millis/                         # Test for millis feature for multitasking
+│   │ ├── blinking_two_led/             # Basic millis: blinking two led
+│   │ └── parallel_task/                # Other example: connect and send in parallel task
+│   │
 │   ├── motor_stepper/                  # Test for motor stepper with A4988 driver
+│   │ ├── motor_position/               # Determine motor position relative to zero point
+│   │ ├── motor_position_ota/           # Upload code for motor using OTA
+│   │ └── motor_without_library/        # Pure code to control motor rotation + OTA
+│   │
 │   ├── OTA/                            # Test for OTA
+│   │ ├── OTA_empty/                    # Upload empty code using OTA
+│   │ └── OTA_motor/                    # Upload code for motor using OTA
+│   │
 │   ├── send_remote_IR/                 # Test for sending IR code to AC
+│   │ ├── library2prior/                # code for AC control using old library
+│   │ └── library4later/                # code for AC control using latest library
+│   │
 │   ├── send_to_thingsboard/            # Test for sending data to Thinsgboard
+│   │ ├── HTTP/                         # communicate to Thingsboard via HTTP protocol
+│   │ └── MQTT/                         # communicate to Thingsboard via MQTT protocol
+│   │
 │   └── serial_RS485/                   # Test for serial communication RS485
+│     ├── receiver/                     # ESP32 as receiver
+│     ├── transmitter/                  # ESP32 as transmitter
+│     └── transmitter-software-serial/  # ESP32 as transmitter via software serial
 │ 
 └── README.md # General project informations
 ```
