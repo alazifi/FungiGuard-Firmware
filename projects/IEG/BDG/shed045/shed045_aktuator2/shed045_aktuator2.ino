@@ -53,7 +53,7 @@ void setup()
   connectToWiFi();
 
   // OTA credentials
-  ArduinoOTA.setHostname("bdg-045-aktuator-unit-02");
+  ArduinoOTA.setHostname("bdg-045-actuator-unit-02");
   ArduinoOTA.setPassword("admin");
 
   // initiate OTA

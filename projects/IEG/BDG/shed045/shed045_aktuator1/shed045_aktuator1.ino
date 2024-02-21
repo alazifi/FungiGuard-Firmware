@@ -53,7 +53,7 @@ void setup()
   connectToWiFi();
 
   // OTA credentials
-  ArduinoOTA.setHostname("bdg-045-aktuator-unit-01");
+  ArduinoOTA.setHostname("bdg-045-actuator-unit-01");
   ArduinoOTA.setPassword("admin");
 
   // initiate OTA
@@ -200,12 +200,12 @@ void loop()
   {
     percentCommand();
 
-    //choose one of these functions:
+    // choose one of these functions:
 
-    //function 1
-    //  movement();
+    // function 1
+    //   movement();
 
-    //function 2
+    // function 2
     stepper.setSpeed(200);
     stepper.moveTo(readValue());
     stepper.runToPosition();

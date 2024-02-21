@@ -22,11 +22,9 @@ DynamicJsonDocument doc1(512);
 DynamicJsonDocument doc2(512);
 
 // initiate millis
-unsigned long prevMillisWifi = 0;
 unsigned long prevMillisPrintLCD = 0;
 unsigned long prevMillisDebug = 0;
 
-unsigned long delayWifi = 1000;     // connection check every 10 s
 unsigned long delayPrintLCD = 1000; // print LCD every 1 s
 unsigned long delayDebug = 1000;    // print serial monitor every 1 s
 
@@ -79,7 +77,7 @@ void setup()
   lcd2.clear();
 }
 
-// function for get compose temperature 1
+// function for getting compose temperature 1
 String composeTemperature1()
 {
   String result = lastComTemp1;
@@ -91,7 +89,7 @@ String composeTemperature1()
   return result;
 }
 
-// function for get compose temperature 2
+// function for getting compose temperature 2
 String composeTemperature2()
 {
   String result = lastComTemp2;
@@ -103,7 +101,7 @@ String composeTemperature2()
   return result;
 }
 
-// function for get compose temperature 3
+// function for getting compose temperature 3
 String composeTemperature3()
 {
   String result = lastComTemp3;
@@ -115,7 +113,7 @@ String composeTemperature3()
   return result;
 }
 
-// function for get compose temperature 4
+// function for getting compose temperature 4
 String composeTemperature4()
 {
   String result = lastComTemp4;
@@ -127,7 +125,7 @@ String composeTemperature4()
   return result;
 }
 
-// function for get compose temperature 5
+// function for getting compose temperature 5
 String composeTemperature5()
 {
   String result = lastComTemp5;
@@ -139,7 +137,7 @@ String composeTemperature5()
   return result;
 }
 
-// function for get room temperature 1
+// function for getting room temperature 1
 String roomTemperature1()
 {
   String result = lastRoomTemp1;
@@ -151,7 +149,7 @@ String roomTemperature1()
   return result;
 }
 
-// function for get humidity 1
+// function for getting humidity 1
 String humidity1()
 {
   String result = lastHumi1;
@@ -163,7 +161,7 @@ String humidity1()
   return result;
 }
 
-// function for get carbon dioxide 1
+// function for getting carbon dioxide 1
 String carbonDioxide1()
 {
   String result = lastCo21;
@@ -175,7 +173,7 @@ String carbonDioxide1()
   return result;
 }
 
-// function for get plantation phase
+// function for getting plantation phase
 String phase()
 {
   String result = lastPhase;
@@ -209,7 +207,7 @@ String paddedPhase()
   return result;
 }
 
-// function for get compose temperature 6
+// function for getting compose temperature 6
 String composeTemperature6()
 {
   String result = lastComTemp6;
@@ -221,7 +219,7 @@ String composeTemperature6()
   return result;
 }
 
-// function for get compose temperature 7
+// function for getting compose temperature 7
 String composeTemperature7()
 {
   String result = lastComTemp7;
@@ -233,7 +231,7 @@ String composeTemperature7()
   return result;
 }
 
-// function for get compose temperature 8
+// function for getting compose temperature 8
 String composeTemperature8()
 {
   String result = lastComTemp8;
@@ -245,7 +243,7 @@ String composeTemperature8()
   return result;
 }
 
-// function for get compose temperature 9
+// function for getting compose temperature 9
 String composeTemperature9()
 {
   String result = lastComTemp9;
@@ -257,7 +255,7 @@ String composeTemperature9()
   return result;
 }
 
-// function for get compose temperature 10
+// function for getting compose temperature 10
 String composeTemperature10()
 {
   String result = lastComTemp10;
@@ -269,7 +267,7 @@ String composeTemperature10()
   return result;
 }
 
-// function for get room temperature 2
+// function for getting room temperature 2
 String roomTemperature2()
 {
   String result = lastRoomTemp2;
@@ -281,7 +279,7 @@ String roomTemperature2()
   return result;
 }
 
-// function for get humidity 2
+// function for getting humidity 2
 String humidity2()
 {
   String result = lastHumi2;
@@ -293,7 +291,7 @@ String humidity2()
   return result;
 }
 
-// function for get carbon dioxide 2
+// function for getting carbon dioxide 2
 String carbonDioxide2()
 {
   String result = lastCo22;
@@ -343,17 +341,23 @@ void printLCD()
   lcd2.setCursor(0, 3);
   lcd2.print("K4:" + String(composeTemperature4()) + "C ");
 
+  // lcd2.setCursor(0, 3);
+  // lcd2.print("K5:" + String(composeTemperature5()) + "C ");
+
   lcd2.setCursor(10, 0);
-  lcd2.print("K1:" + String(composeTemperature6()) + "C ");
+  lcd2.print("K6:" + String(composeTemperature6()) + "C ");
 
   lcd2.setCursor(10, 1);
-  lcd2.print("K2:" + String(composeTemperature7()) + "C ");
+  lcd2.print("K7:" + String(composeTemperature7()) + "C ");
 
   lcd2.setCursor(10, 2);
-  lcd2.print("K3:" + String(composeTemperature8()) + "C ");
+  lcd2.print("K8:" + String(composeTemperature8()) + "C ");
 
   lcd2.setCursor(10, 3);
-  lcd2.print("K4:" + String(composeTemperature9()) + "C ");
+  lcd2.print("K9:" + String(composeTemperature9()) + "C ");
+
+  // lcd2.setCursor(10, 3);
+  // lcd2.print("K10:" + String(composeTemperature10()) + "C ");
 }
 
 void loop()
