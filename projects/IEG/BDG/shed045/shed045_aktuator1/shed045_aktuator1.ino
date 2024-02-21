@@ -1,3 +1,4 @@
+#include <Arduino.h>
 #include <ArduinoJson.h>  //library for parsing data json
 #include <WiFi.h>         //library for WiFi
 #include <ESPmDNS.h>      //library for OTA

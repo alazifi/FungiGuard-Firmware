@@ -1,3 +1,4 @@
+#include <Arduino.h>
 #include <ArduinoJson.h>  //library for parsing data json
 #include <WiFi.h>         //library for WiFi
 #include <ESPmDNS.h>      //library for OTA
@@ -40,7 +41,7 @@ void setup()
   // initiate memory non-volatile
   EEPROM.begin(512);
 
-  // set motor pin mode as output
+  // set motor pins mode as output
   pinMode(STEP, OUTPUT);
   pinMode(DIR, OUTPUT);
 
@@ -64,7 +65,7 @@ void setup()
   stepper.setCurrentPosition(readValue());
 
   // debugging percentage
-  //  Serial.println(percentCommand());
+  // Serial.println(percentCommand());
 }
 
 // function to connect to wifi
@@ -77,7 +78,7 @@ void connectToWiFi()
   }
 }
 
-// function to get data percentage of ventilation from TB (json package)
+// function to get percentage data of ventilation from TB (json package)
 String getDataFromTB()
 {
   // make object for http
@@ -103,7 +104,7 @@ String getDataFromTB()
   {
     // get string from http response
     String payload = http.getString();
-    return payload;
+    // return payload;
   }
   else
   {
@@ -115,6 +116,7 @@ String getDataFromTB()
 
   // end http connection
   http.end();
+  return payload;
 }
 
 // function to get exact percentage value from TB
@@ -199,12 +201,12 @@ void loop()
   {
     percentCommand();
 
-    //choose one of these functions:
+    // choose one of these functions:
 
-    //function 1
-    //  movement();
+    // function 1
+    //   movement();
 
-    //function 2
+    // function 2
     stepper.setSpeed(200);
     stepper.moveTo(readValue());
     stepper.runToPosition();
