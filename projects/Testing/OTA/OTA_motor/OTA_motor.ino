@@ -1,3 +1,4 @@
+#include <AccelStepper.h>
 #include <WiFi.h>
 #include <ESPmDNS.h>
 #include <WiFiUdp.h>
@@ -5,8 +6,6 @@
 
 #define SSID "Shed45"
 #define PASS "test12345"
-
-#include <AccelStepper.h>
 
 // Inisialisasi objek stepper
 AccelStepper stepper(1, 33, 32); // (tipe driver, pin Step, pin DIR)
