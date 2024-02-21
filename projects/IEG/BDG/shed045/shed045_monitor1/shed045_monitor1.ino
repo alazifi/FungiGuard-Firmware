@@ -62,7 +62,7 @@ void setup()
   pinMode(EN_PIN_1, OUTPUT);
   pinMode(EN_PIN_2, OUTPUT);
 
-  // initiate work of RS485 pins as low condition (receiver)
+  // initiate work of RS485 pins as low condition (receiver mode)
   digitalWrite(EN_PIN_1, LOW);
   digitalWrite(EN_PIN_2, LOW);
 

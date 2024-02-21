@@ -64,7 +64,7 @@ void setup()
   stepper.setAcceleration(3000.0);
   stepper.setCurrentPosition(readValue());
 
-  // debugging percentage
+  // debug percentage
   //  Serial.println(percentCommand());
 }
 
